@@ -1,56 +1,48 @@
 import "../styles/insert.css"
 
-function School() {
-    return(
+export default function Education({formData, handleChange}) {
+    return (
         <div>
-            <label>School:</label>
-            <input type="text"/>
-        </div>
-    )
-}
+            <h2 className="header">Insert Info</h2>
+            <lable htmlFor="name">
+              School:
+              <input
+                type="text"
+                name="school"
+                value={formData.school}
+                onChange={handleChange}
+              />
+            </lable>
+    
+            <lable>
+              Degree:
+              <input
+                type="text"
+                name="degree"
+                value={formData.degree}
+                onChange={handleChange}
+              />
+            </lable>
+    
+            <lable>
+              Start Date:
+              <input
+                type="date"
+                name="schoolDateStart"
+                value={formData.schoolDateStart}
+                onChange={handleChange}
+              />
+            </lable>
 
-function Degree() {
-    return(
-        <div>
-            <label>Degree:</label>
-            <input type="text"/>
+            <lable>
+              End Date:
+              <input
+                type="date"
+                name="schoolDateEnd"
+                value={formData.schoolDateEnd}
+                onChange={handleChange}
+              />
+            </lable>
         </div>
-    )
-}
-
-function DateStart() {
-    return(
-        <div>
-            <label>Date Started:</label>
-            <input type="date"/>
-        </div>
-    )
-}
-
-function DateEnd() {
-    return(
-        <div>
-            <label>Date Ended:</label>
-            <input type="date"/>
-        </div>
-    )
-}
-
-function Enter() {
-    return(
-        <button type="button">Enter</button>
-    )
-}
-
-export default function Education() {
-    return(
-        <div className="form">
-            <h2 className="header">Insert Education</h2>
-            <School />
-            <Degree />
-            <DateStart />
-            <DateEnd />
-            <Enter />
-        </div>
-    )
+      );
 }

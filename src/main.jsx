@@ -5,13 +5,15 @@ import App from "./App.jsx";
 import GeneralInfo from "./components/GeneralInfo.jsx";
 import Education from "./components/Education.jsx";
 import Experience from "./components/Experience.jsx";
+import CvApp from "./components/CvApp.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <div className="insert">
-      <GeneralInfo />
+      {/* <GeneralInfo />
       <Education />
-      <Experience />
+      <Experience /> */}
+      <CvApp />
     </div>
 
     {/* <App /> */}

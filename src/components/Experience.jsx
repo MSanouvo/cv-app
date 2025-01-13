@@ -1,66 +1,58 @@
 import "../styles/insert.css"
 
-function Company() {
-    return(
+export default function Experience({formData, handleChange}) {
+    return (
         <div>
-            <label>Company:</label>
-            <input type="text"/>
-        </div>
-    )
-}
+            <h2 className="header">Insert Info</h2>
+            <lable htmlFor="name">
+              Company:
+              <input
+                type="text"
+                name="company"
+                value={formData.company}
+                onChange={handleChange}
+              />
+            </lable>
+    
+            <lable>
+              Position:
+              <input
+                type="text"
+                name="position"
+                value={formData.position}
+                onChange={handleChange}
+              />
+            </lable>
+    
+            <lable>
+              Start Date:
+              <input
+                type="date"
+                name="workDateStart"
+                value={formData.workDateStart}
+                onChange={handleChange}
+              />
+            </lable>
 
-function Position() {
-    return(
-        <div>
-            <label>Position:</label>
-            <input type="text"/>
-        </div>
-    )
-}
+            <lable>
+              End Date:
+              <input
+                type="date"
+                name="workDateEnd"
+                value={formData.workDateEnd}
+                onChange={handleChange}
+              />
+            </lable>
 
-function DateStart() {
-    return(
-        <div>
-            <label>Date Started:</label>
-            <input type="date"/>
+            <label>
+                Responsibilities:
+                <textarea
+                name="responsibilities"
+                value={formData.responsibilities}
+                onChange={handleChange}
+                >
+                </textarea>
+            </label>
         </div>
-    )
-}
-
-function DateEnd() {
-    return(
-        <div>
-            <label>Date Ended:</label>
-            <input type="date"/>
-        </div>
-    )
-}
-
-function Responsibilities() {
-    return(
-        <div>
-            <label>Responsibilities</label>
-            <textarea></textarea>
-        </div>
-    )
-}
-
-function Enter() {
-    return(
-        <button type="button">Enter</button>
-    )
-}
-
-export default function Experience() {
-    return(
-        <div className="form">
-            <h2 className="header">Insert Experience</h2>
-            <Company />
-            <Position />
-            <DateStart />
-            <DateEnd />
-            <Responsibilities />
-            <Enter />
-        </div>
-    )
+      );
 }

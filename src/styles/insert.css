@@ -16,3 +16,9 @@
     width: 100px;
     height: 30px;
 }
+
+.data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
