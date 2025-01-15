@@ -2,29 +2,31 @@ import "../styles/insert.css"
 
 export default function Experience({formData, handleChange}) {
     return (
-        <div>
-            <h2 className="header">Insert Info</h2>
-            <lable htmlFor="name">
+        <div className="section">
+            <h2 className="header">Experience</h2>
+            <label className="input">
               Company:
               <input
+                className="input_field"
                 type="text"
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
     
-            <lable>
+            <label className="input">
               Position:
               <input
+                className="input_field"
                 type="text"
                 name="position"
                 value={formData.position}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
     
-            <lable>
+            <label className="input">
               Start Date:
               <input
                 type="date"
@@ -32,9 +34,9 @@ export default function Experience({formData, handleChange}) {
                 value={formData.workDateStart}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
 
-            <lable>
+            <label className="input">
               End Date:
               <input
                 type="date"
@@ -42,14 +44,16 @@ export default function Experience({formData, handleChange}) {
                 value={formData.workDateEnd}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
 
-            <label>
+            <label className="input">
                 Responsibilities:
                 <textarea
                 name="responsibilities"
                 value={formData.responsibilities}
                 onChange={handleChange}
+                cols={30}
+                rows={7}
                 >
                 </textarea>
             </label>

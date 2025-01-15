@@ -1,40 +1,42 @@
 import "../styles/insert.css";
-import { useState } from "react";
 
 export default function GeneralInfo({formData, handleChange}) {
 
   return (
-    <div>
-        <h2 className="header">Insert Info</h2>
-        <lable htmlFor="name">
+    <div className="section">
+        <h2 className="header">General Info</h2>
+        <label className="input">
           Name:
           <input
+            className="input_field"
             type="text"
             name="name"
             value={formData.name}
             onChange={handleChange}
           />
-        </lable>
+        </label>
 
-        <lable>
+        <label className="input">
           Email:
           <input
+            className="input_field"
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
           />
-        </lable>
+        </label>
 
-        <lable>
+        <label className="input">
           Phone:
           <input
+            className="input_field"
             type="number"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
           />
-        </lable>
+        </label>
     </div>
   );
 }

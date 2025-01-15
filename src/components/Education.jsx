@@ -2,29 +2,31 @@ import "../styles/insert.css"
 
 export default function Education({formData, handleChange}) {
     return (
-        <div>
-            <h2 className="header">Insert Info</h2>
-            <lable htmlFor="name">
+        <div className="section">
+            <h2 className="header">Education</h2>
+            <label className="input">
               School:
               <input
+                className="input_field"
                 type="text"
                 name="school"
                 value={formData.school}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
     
-            <lable>
+            <label className="input">
               Degree:
               <input
+                className="input_field"
                 type="text"
                 name="degree"
                 value={formData.degree}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
     
-            <lable>
+            <label className="input">
               Start Date:
               <input
                 type="date"
@@ -32,9 +34,9 @@ export default function Education({formData, handleChange}) {
                 value={formData.schoolDateStart}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
 
-            <lable>
+            <label className="input">
               End Date:
               <input
                 type="date"
@@ -42,7 +44,7 @@ export default function Education({formData, handleChange}) {
                 value={formData.schoolDateEnd}
                 onChange={handleChange}
               />
-            </lable>
+            </label>
         </div>
       );
 }
