@@ -6,7 +6,7 @@ import CvApp from "./components/CvApp.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="insert">
+    <div id="insert">
       <CvApp />
     </div>
   </StrictMode>,

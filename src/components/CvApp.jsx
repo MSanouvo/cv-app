@@ -1,7 +1,7 @@
 import GeneralInfo from "./GeneralInfo";
 import Education from "./Education";
 import Experience from "./Experience";
-import Display from "./Display1";
+import Display from "./CvDisplay";
 import { useState } from "react";
 import "../styles/insert.css";
 
@@ -23,6 +23,27 @@ export default function CvApp() {
 
   const [submittedData, setSubmittedData] = useState(null);
 
+  const [errors, setErrors] = useState({})
+
+  const validateForm = (data) => {
+    const errors = {}
+
+    if(!data.name.trim()) {
+        errors.name = "Please input your name"
+    }
+
+    if(!data.email.trim()) {
+        errors.email = "Please enter your email"
+    } else if(!/\S+@\S+\.\S+/.test(data.email)) {
+        errors.email = "Please enter a valid email"
+    }
+
+    if(data.phone.length != 10) {
+        errors.phone = "Please enter a 10 digit phone number"
+    }
+    return errors
+  }
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -30,16 +51,20 @@ export default function CvApp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setSubmittedData(formData);
-    console.log(submittedData);
+    const newErrors = validateForm(formData)
+    setErrors(newErrors)
+
+    if(Object.keys(newErrors).length === 0){
+        setSubmittedData(formData);
+    }
   };
 
   return (
     <div className="container">
-      <form className="form" onSubmit={handleSubmit}>
-        <GeneralInfo formData={formData} handleChange={handleChange} />
-        <Education formData={formData} handleChange={handleChange} />
-        <Experience formData={formData} handleChange={handleChange} />
+      <form className="form" noValidate onSubmit={handleSubmit}>
+        <GeneralInfo formData={formData} handleChange={handleChange} errors={errors} />
+        <Education formData={formData} handleChange={handleChange} errors={errors} />
+        <Experience formData={formData} handleChange={handleChange} errors={errors} />
         <button type="submit">Submit</button>
       </form>
 

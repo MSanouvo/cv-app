@@ -1,6 +1,6 @@
 import "../styles/insert.css";
 
-export default function GeneralInfo({ formData, handleChange }) {
+export default function GeneralInfo({ formData, handleChange, errors }) {
   return (
     <div className="section">
       <h2 className="header">General Info</h2>
@@ -12,10 +12,12 @@ export default function GeneralInfo({ formData, handleChange }) {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          required
+          placeholder="John Doe"
         />
       </label>
-      {/* <span className="error">Error</span> */}
+      {errors.name && (
+        <span className="error">{errors.name}</span>
+      )}
 
       <label className="input">
         Email:
@@ -25,8 +27,12 @@ export default function GeneralInfo({ formData, handleChange }) {
           name="email"
           value={formData.email}
           onChange={handleChange}
+          placeholder="example@email.com"
         />
       </label>
+      {errors.email && (
+        <span className="error">{errors.email}</span>
+      )}
 
       <label className="input">
         Phone:
@@ -36,8 +42,12 @@ export default function GeneralInfo({ formData, handleChange }) {
           name="phone"
           value={formData.phone}
           onChange={handleChange}
+          placeholder="1234567890"
         />
       </label>
+      {errors.phone && (
+        <span className="error">{errors.phone}</span>
+      )}
     </div>
   );
 }

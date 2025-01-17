@@ -68,11 +68,11 @@ button:focus-visible {
   }
 }
 
-.insert{
-  outline: 1px solid rgb(255, 0, 0);
+#insert{
   display: flex;
   flex-direction: column;
   width: 100vw;
   padding: 10px;
   gap: 0px;
 }
+

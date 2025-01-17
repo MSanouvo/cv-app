@@ -1,10 +1,6 @@
 .cv{
     display: flex;
     text-align: left;
-    /* background-color: white;
-    color: black;
-    box-shadow: 3px 3px 5px gray;
-    padding: 20px; */
     font-size: 1rem;
     padding: 20px;
 }

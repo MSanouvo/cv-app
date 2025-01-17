@@ -1,6 +1,6 @@
 import "../styles/insert.css";
 
-export default function Experience({ formData, handleChange }) {
+export default function Experience({ formData, handleChange, errors }) {
   return (
     <div className="section">
       <h2 className="header">Experience</h2>
@@ -44,6 +44,7 @@ export default function Experience({ formData, handleChange }) {
             name="workDateEnd"
             value={formData.workDateEnd}
             onChange={handleChange}
+            min={formData.workDateStart}
           />
         </label>
       </div>

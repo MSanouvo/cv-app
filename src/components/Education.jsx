@@ -1,6 +1,6 @@
 import "../styles/insert.css";
 
-export default function Education({ formData, handleChange }) {
+export default function Education({ formData, handleChange, errors }) {
   return (
     <div className="section">
       <h2 className="header">Education</h2>
@@ -44,6 +44,7 @@ export default function Education({ formData, handleChange }) {
             name="schoolDateEnd"
             value={formData.schoolDateEnd}
             onChange={handleChange}
+            min={formData.schoolDateStart}
           />
         </label>
       </div>
