@@ -14,17 +14,13 @@
     display: flex;
     flex-direction: column;
     flex: 2;
+    padding: 20px;
 }
 
 .header{
-    padding: 0;
+    padding: 10px 0;
     margin: 0;
-}
-
-.data{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    font-weight: bolder;
 }
 
 .container{
@@ -40,7 +36,7 @@
 .section{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
 }
 
 .input{
@@ -50,7 +46,7 @@
 }
 
 .input_field{
-    width: 275px;
+    width: 80%;
 }
 
 input::-webkit-outer-spin-button,
@@ -65,4 +61,14 @@ input[type=number] {
 
 textarea{
     resize: none;
+}
+
+.dates{
+    display: flex;
+    gap: 20px;
+}
+
+.error{
+    font-size: .8rem;
+    color: red;
 }

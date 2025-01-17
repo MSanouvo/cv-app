@@ -2,7 +2,6 @@ import GeneralInfo from "./GeneralInfo";
 import Education from "./Education";
 import Experience from "./Experience";
 import Display from "./Display1";
-import Display2 from "./Display2";
 import { useState } from "react";
 import "../styles/insert.css";
 
@@ -23,8 +22,6 @@ export default function CvApp() {
   });
 
   const [submittedData, setSubmittedData] = useState(null);
-
-  const [activeIndex, setActiveIndex] = useState(0)
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -47,18 +44,7 @@ export default function CvApp() {
       </form>
 
       <div className="display">
-        <div className="buttons">
-            <button onClick={() => setActiveIndex(0)}>Display1</button>
-            <button onClick={() => setActiveIndex(1)}>Display2</button>
-        </div>
-        <Display 
-            submittedData={submittedData}
-            isActive={activeIndex === 0}
-        />
-        <Display2 
-            submittedData={submittedData} 
-            isActive={activeIndex === 1}
-        />
+        <Display submittedData={submittedData} />
       </div>
     </div>
   );
