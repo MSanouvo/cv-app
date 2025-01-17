@@ -1,8 +1,8 @@
-import "../styles/insert.css";
+import "../styles/form.css";
 
 export default function GeneralInfo({ formData, handleChange, errors }) {
   return (
-    <div className="section">
+    <div id="section">
       <h2 className="header">General Info</h2>
       <label className="input">
         Name:
@@ -15,9 +15,7 @@ export default function GeneralInfo({ formData, handleChange, errors }) {
           placeholder="John Doe"
         />
       </label>
-      {errors.name && (
-        <span className="error">{errors.name}</span>
-      )}
+      {errors.name && <span className="error">{errors.name}</span>}
 
       <label className="input">
         Email:
@@ -30,9 +28,7 @@ export default function GeneralInfo({ formData, handleChange, errors }) {
           placeholder="example@email.com"
         />
       </label>
-      {errors.email && (
-        <span className="error">{errors.email}</span>
-      )}
+      {errors.email && <span className="error">{errors.email}</span>}
 
       <label className="input">
         Phone:
@@ -45,9 +41,7 @@ export default function GeneralInfo({ formData, handleChange, errors }) {
           placeholder="1234567890"
         />
       </label>
-      {errors.phone && (
-        <span className="error">{errors.phone}</span>
-      )}
+      {errors.phone && <span className="error">{errors.phone}</span>}
     </div>
   );
 }

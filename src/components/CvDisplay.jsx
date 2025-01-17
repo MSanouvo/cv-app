@@ -1,4 +1,4 @@
-import "../styles/CV.css";
+import "../styles/CvDisplay.css";
 
 export default function Display({ submittedData }) {
   return (

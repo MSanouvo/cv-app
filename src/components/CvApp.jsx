@@ -3,7 +3,7 @@ import Education from "./Education";
 import Experience from "./Experience";
 import Display from "./CvDisplay";
 import { useState } from "react";
-import "../styles/insert.css";
+import "../styles/CvApp.css";
 
 export default function CvApp() {
   const [formData, setFormData] = useState({
@@ -23,26 +23,26 @@ export default function CvApp() {
 
   const [submittedData, setSubmittedData] = useState(null);
 
-  const [errors, setErrors] = useState({})
+  const [errors, setErrors] = useState({});
 
   const validateForm = (data) => {
-    const errors = {}
+    const errors = {};
 
-    if(!data.name.trim()) {
-        errors.name = "Please input your name"
+    if (!data.name.trim()) {
+      errors.name = "Please input your name";
     }
 
-    if(!data.email.trim()) {
-        errors.email = "Please enter your email"
-    } else if(!/\S+@\S+\.\S+/.test(data.email)) {
-        errors.email = "Please enter a valid email"
+    if (!data.email.trim()) {
+      errors.email = "Please enter your email";
+    } else if (!/\S+@\S+\.\S+/.test(data.email)) {
+      errors.email = "Please enter a valid email";
     }
 
-    if(data.phone.length != 10) {
-        errors.phone = "Please enter a 10 digit phone number"
+    if (data.phone.length != 10) {
+      errors.phone = "Please enter a 10 digit phone number";
     }
-    return errors
-  }
+    return errors;
+  };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -51,24 +51,36 @@ export default function CvApp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newErrors = validateForm(formData)
-    setErrors(newErrors)
+    const newErrors = validateForm(formData);
+    setErrors(newErrors);
 
-    if(Object.keys(newErrors).length === 0){
-        setSubmittedData(formData);
+    if (Object.keys(newErrors).length === 0) {
+      setSubmittedData(formData);
     }
   };
 
   return (
-    <div className="container">
-      <form className="form" noValidate onSubmit={handleSubmit}>
-        <GeneralInfo formData={formData} handleChange={handleChange} errors={errors} />
-        <Education formData={formData} handleChange={handleChange} errors={errors} />
-        <Experience formData={formData} handleChange={handleChange} errors={errors} />
+    <div id="container">
+      <form id="form" noValidate onSubmit={handleSubmit}>
+        <GeneralInfo
+          formData={formData}
+          handleChange={handleChange}
+          errors={errors}
+        />
+        <Education
+          formData={formData}
+          handleChange={handleChange}
+          errors={errors}
+        />
+        <Experience
+          formData={formData}
+          handleChange={handleChange}
+          errors={errors}
+        />
         <button type="submit">Submit</button>
       </form>
 
-      <div className="display">
+      <div id="display">
         <Display submittedData={submittedData} />
       </div>
     </div>

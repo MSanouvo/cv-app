@@ -1,0 +1,67 @@
+.cv {
+  display: flex;
+  text-align: left;
+  font-size: 1rem;
+  padding: 20px;
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.experience {
+  display: flex;
+  flex-direction: column;
+}
+
+.education > div,
+.experience > div {
+  display: flex;
+  gap: 5px;
+}
+
+.company,
+.school {
+  font-weight: bold;
+}
+
+.company,
+.position,
+.school,
+.degree {
+  font-size: 1.3rem;
+}
+
+.subhead {
+  font-size: 2.5rem;
+  padding: 0px;
+}
+
+.job-description {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dates-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: flex;
+  outline: 1px solid white;
+  margin: 0 0 15px 0;
+}
+
+.description-header {
+  font-weight: bold;
+  font-size: 1.2rem;
+}

@@ -1,8 +1,8 @@
-import "../styles/insert.css";
+import "../styles/form.css";
 
 export default function Education({ formData, handleChange, errors }) {
   return (
-    <div className="section">
+    <div id="section">
       <h2 className="header">Education</h2>
       <label className="input">
         School:

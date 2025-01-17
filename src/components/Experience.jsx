@@ -1,8 +1,8 @@
-import "../styles/insert.css";
+import "../styles/form.css";
 
 export default function Experience({ formData, handleChange, errors }) {
   return (
-    <div className="section">
+    <div id="section">
       <h2 className="header">Experience</h2>
       <label className="input">
         Company:

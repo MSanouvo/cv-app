@@ -1,0 +1,63 @@
+.header {
+  padding: 10px 0;
+  margin: 0;
+  font-weight: bolder;
+}
+
+#section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.input_field {
+  width: 80%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  appearance: textfield;
+}
+
+textarea {
+  resize: none;
+}
+
+.dates {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.error {
+  font-size: 0.8rem;
+  color: red;
+}
+
+@media (max-width: 430px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #form {
+    max-width: 80%;
+  }
+
+  #display {
+    flex: auto;
+    padding: 10px 30px;
+    width: 80%;
+  }
+}
